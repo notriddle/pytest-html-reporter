@@ -1404,12 +1404,49 @@
                 elmnt.style.background = bgcolor;
                 elmnt.style.borderRight = borderstyle;
             }
-            // Get the element with id="defaultOpen" and click on it
-            document.getElementById("defaultOpen").click();
-        </script>
-        <script>
-            // Get the element with id="defaultOpen" and click on it
-            document.getElementById("defaultOpen").click();
+            
+            // Function to open page based on URL hash
+            function openPageFromHash() {
+                var hash = window.location.hash.substring(1); // Remove the # symbol
+                if (hash) {
+                    // Map hash to page IDs
+                    var hashToPageMap = {
+                        'dashboard': 'dashboard',
+                        'suites': 'suiteMetrics',
+                        'test-metrics': 'testMetrics',
+                        'archives': 'archives',
+                        'screenshots': 'screenshots'
+                    };
+                    
+                    var pageId = hashToPageMap[hash];
+                    if (pageId) {
+                        // Find the corresponding tab link
+                        var tablinks = document.getElementsByClassName("tablink");
+                        for (var i = 0; i < tablinks.length; i++) {
+                            if (tablinks[i].getAttribute('href') === '#' + hash) {
+                                tablinks[i].click();
+                                return;
+                            }
+                        }
+                    }
+                }
+                // If no hash or invalid hash, open default page
+                var defaultBtn = document.getElementById("defaultOpen");
+                if (defaultBtn) {
+                    defaultBtn.click();
+                }
+            }
+            
+            // Use jQuery ready to ensure DOM and scripts are loaded
+            $(document).ready(function() {
+                // Small delay to ensure this runs after window.onload in dashboard
+                setTimeout(function() {
+                    openPageFromHash();
+                }, 100);
+                
+                // Listen for hash changes (back/forward browser buttons)
+                window.addEventListener('hashchange', openPageFromHash);
+            });
         </script>
         <script>
             $(window).on('load',function(){$('.loader').fadeOut();});
