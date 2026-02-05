@@ -85,96 +85,189 @@
                     .card__footer {
                         display: grid;
                         grid-template-columns: repeat(2, 1fr);
-                        gap: 15px;
-                        padding: 10px;
+                        gap: 10px 5px;
+                        padding: 10px 5px;
                     }
                     .card__footer-section {
                         width: 100%;
                         min-width: unset;
-                        padding: 10px 5px;
+                        padding: 8px 2px;
                     }
                     .footer-section__data {
-                        font-size: 2rem;
+                        font-size: 1.6rem;
                     }
                     .footer-section__label {
-                        font-size: 10pt;
+                        font-size: 9pt;
+                        text-transform: uppercase;
                     }
                     .total__count {
-                        font-size: 4rem;
+                        font-size: 3.5rem;
                         display: block;
                         text-align: center;
                         width: 100%;
+                        margin: 10px 0;
                     }
                     .total_count__label {
                         display: block;
                         text-align: center;
                         width: 100%;
                         padding-left: 0 !important;
+                        font-size: 1rem;
+                        margin-bottom: 15px;
                     }
                     .header__title {
-                        font-size: 1.3rem;
-                        padding-left: 0;
+                        font-size: 1.1rem;
+                        padding-left: 0 !important;
+                        padding-top: 0 !important;
                         text-align: center;
                         width: 100%;
+                        font-weight: 600;
                     }
                     .header__date {
-                        font-size: 1rem;
-                        padding-left: 0;
-                        text-align: center;
-                        width: 100%;
+                        font-size: 0.55rem;
+                        padding-left: 10px !important;
+                        text-align: left;
+                        width: auto;
+                        position: absolute !important;
+                        top: 10px !important;
+                        left: 0 !important;
+                        margin-top: 0 !important;
+                        margin-bottom: 0 !important;
+                        color: #999;
                     }
                     .card__header {
                         justify-content: center;
+                        margin-bottom: 20px;
+                        position: relative;
+                        min-height: 30px;
                     }
-                    .outer_my_chart {
-                        position: static !important;
-                        margin: 20px auto !important;
-                        width: 120px !important;
-                        height: 120px !important;
-                        float: none !important;
-                    }
-                    .inner_my_chart {
-                        max-width: 120px !important;
-                        max-height: 120px !important;
-                    }
-                    .suite_count_section {
-                        margin-top: 10px;
-                    }
-                    .dashboard__headers {
-                        font-size: 1.2rem;
+                    .card__header:nth-child(2) {
+                        position: absolute !important;
+                        top: 10px !important;
+                        left: 0 !important;
+                        margin: 0 !important;
+                        width: auto !important;
                     }
                     .time__taken {
-                        font-size: 14px;
+                        font-size: 11px;
+                        padding: 0;
                     }
                     .time-taken-wrapper {
                         margin-left: 0 !important;
-                        margin-bottom: 10px !important;
-                        text-align: center;
+                        margin-bottom: 0 !important;
+                        text-align: right;
+                        position: absolute !important;
+                        top: 10px;
+                        right: 10px;
                     }
-                    .total-count-wrapper {
-                        justify-content: center;
-                        display: block !important;
+                    .time-taken-wrapper svg {
+                        width: 14px !important;
+                        height: 14px !important;
+                        margin: 0 4px 0 0 !important;
+                    }
+                    /* Mobile layout: first div holds date/time absolutely positioned */
+                    .card__content > div:first-child {
+                        position: relative !important;
+                        margin-bottom: 0 !important;
+                        height: 40px;
+                    }
+                    /* Mobile layout: count left, label below, chart right */
+                    .card__content > div:nth-child(2) {
+                        display: grid !important;
+                        grid-template-columns: 1fr 140px;
+                        grid-template-rows: auto auto;
+                        gap: 15px 20px;
+                        align-items: start;
+                        margin-top: 20px !important;
+                        position: relative;
+                    }
+                    /* Count and label section */
+                    .card__content > div:nth-child(2) > div:first-child {
+                        grid-column: 1;
+                        grid-row: 1 / span 2;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                    }
+                    /* Chart section */
+                    .card__content > div:nth-child(3) {
+                        grid-column: 2 !important;
+                        grid-row: 1 / span 2 !important;
+                        margin: 0 !important;
+                        align-self: center;
+                        position: static !important;
+                    }
+                    .outer_my_chart {
+                        position: static !important;
+                        margin: 0 auto !important;
+                        width: 130px !important;
+                        height: 130px !important;
+                        float: none !important;
+                        left: auto !important;
+                        right: auto !important;
+                        top: auto !important;
+                    }
+                    .inner_my_chart {
+                        max-width: 130px !important;
+                        max-height: 130px !important;
+                    }
+                    .total__count {
+                        font-size: 3.2rem;
+                        display: block;
+                        text-align: left;
+                        width: 100%;
+                        margin: 0;
+                        padding-left: 10px;
+                        line-height: 0.9;
+                        font-weight: bold;
+                    }
+                    .total_count__label {
+                        display: block;
+                        text-align: left;
+                        width: 100%;
+                        padding-left: 10px !important;
+                        font-size: 0.7rem;
+                        margin-top: 5px;
+                        margin-bottom: 0;
+                        color: #888;
+                        text-transform: uppercase;
+                        letter-spacing: 0.5px;
+                    }
+                    .suite_count_section {
+                        margin-top: 12px;
+                    }
+                    .dashboard__headers {
+                        font-size: 1.1rem;
+                        padding-left: 10px !important;
                     }
                     .dashboard-card-inner {
                         min-height: auto !important;
                         height: auto !important;
+                        padding: 10px 5px;
                     }
                     .suite-stats-wrapper {
-                        margin-top: 20px !important;
+                        margin-top: 15px !important;
                         position: static !important;
                     }
                     .card__content {
-                        padding: 1rem;
+                        padding: 0.5rem 0.3rem;
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
                     }
                     .card__content > div {
                         position: static !important;
-                        margin-top: 10px !important;
+                        margin-left: 0 !important;
+                    }
+                    .card__content > div[style*="margin-left: 30%"] {
+                        margin-left: 0 !important;
                     }
                     #download {
                         position: relative !important;
                         display: block;
                         text-align: right;
                         margin-bottom: 10px;
+                        padding-right: 10px;
                     }
                     #download i {
                         position: static !important;
@@ -184,20 +277,12 @@
                         max-width: 100%;
                         height: auto !important;
                     }
-                    canvas {
-                        max-width: 100%;
+                    canvas#trends, canvas#groupBarChart {
+                        max-width: 100% !important;
+                        height: auto !important;
                     }
-                    .report-summary-section {
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                    }
-                    .donut-chart-wrapper {
-                        order: -1;
-                        margin-bottom: 15px;
-                    }
-                    .total-count-wrapper, .total-label-wrapper {
-                        width: 100%;
+                }
+
                         text-align: center;
                     }
                 }
@@ -305,7 +390,7 @@
                 }
 
                 .header__date {
-                  font-size: 1.3rem;
+                  font-size: 0.9rem;
                   font-family: sans-serif;
                   padding-left: 5%;
                   color: darkgray;
@@ -316,13 +401,16 @@
                   font-family: sans-serif;
                   color: black;
                   padding-top: 8%;
+                  text-align: left;
+                  padding-left: 5%;
                 }
 
                 .total_count__label {
                   font-size: 1.3rem;
                   font-family: sans-serif;
-                  padding-left: 12%;
+                  padding-left: 5%;
                   color: darkgray;
+                  text-align: left;
                 }
 
                 .header__title-icon {
@@ -1275,7 +1363,7 @@
         <script>
             function alignTotalCount() {
                 arr1 = [1, 2, 3, 4, 5];
-                arr2 = ['19%', '14%', '11%', '7%', '4%'];
+                arr2 = ['8%', '6%', '5%', '4%', '3%'];
                 zipped = arr1.map((x, i) => [x, arr2[i]]);
                 var x = parseInt(%(total)%);
                 size = zipped[(x.toString().length)-1][1];
@@ -1654,6 +1742,22 @@
                     pdf.addImage(blob, 'PNG', 10, 10, $('#dashboard').width(), $('#dashboard').height());
                     pdf.save("pytest_html_reporter.pdf");
                 });
+            });
+
+            // Auto-refresh on window resize for responsive adaptation
+            var resizeTimer;
+            var lastWidth = window.innerWidth;
+            
+            window.addEventListener('resize', function() {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(function() {
+                    var currentWidth = window.innerWidth;
+                    // Only refresh if width changed significantly (crossing breakpoints)
+                    if (Math.abs(currentWidth - lastWidth) > 50) {
+                        lastWidth = currentWidth;
+                        location.reload();
+                    }
+                }, 500); // Wait 500ms after resize stops
             });
         </script>
 
