@@ -9,13 +9,13 @@ from os.path import isfile, join
 
 import pytest
 
-from html_page.archive_body import ArchiveBody
-from html_page.archive_row import ArchiveRow
-from html_page.floating_error import FloatingError
-from html_page.screenshot_details import ScreenshotDetails
-from html_page.suite_row import SuiteRow
-from html_page.template import HtmlTemplate
-from html_page.test_row import TestRow
+from pytest_html_reporter.html_page.archive_body import ArchiveBody
+from pytest_html_reporter.html_page.archive_row import ArchiveRow
+from pytest_html_reporter.html_page.floating_error import FloatingError
+from pytest_html_reporter.html_page.screenshot_details import ScreenshotDetails
+from pytest_html_reporter.html_page.suite_row import SuiteRow
+from pytest_html_reporter.html_page.template import HtmlTemplate
+from pytest_html_reporter.html_page.test_row import TestRow
 from pytest_html_reporter.util import suite_highlights, generate_suite_highlights, max_rerun
 from pytest_html_reporter.time_converter import time_converter
 from pytest_html_reporter.const_vars import ConfigVars
