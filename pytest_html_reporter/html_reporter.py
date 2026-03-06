@@ -337,7 +337,7 @@ class HTMLReporter(object):
                 'status', {})[
                 'total_rerun'] = 0
 
-        for i in self.json_data['content']['suites'].setdefault(len(ConfigVars._test_suite_name) - 1, {})['tests']:
+        for i in self.json_data['content']['suites'].setdefault(len(ConfigVars._test_suite_name) - 1, {}).get('tests', []):
             if 'ERROR' in \
                     self.json_data['content']['suites'].setdefault(len(ConfigVars._test_suite_name) - 1, {})['tests'][
                         i]['status']:
