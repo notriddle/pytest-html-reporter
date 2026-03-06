@@ -340,7 +340,7 @@ class HTMLReporter(object):
         for i in self.json_data['content']['suites'].setdefault(len(ConfigVars._test_suite_name) - 1, {}).get('tests', []):
             if 'ERROR' in \
                     self.json_data['content']['suites'].setdefault(len(ConfigVars._test_suite_name) - 1, {})['tests'][
-                        i].get('status', None):
+                        i].get('status', []):
                 ConfigVars._suite_error += 1
             elif 'FAIL' == \
                     self.json_data['content']['suites'].setdefault(len(ConfigVars._test_suite_name) - 1, {})['tests'][
