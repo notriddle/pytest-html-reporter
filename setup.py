@@ -26,6 +26,7 @@ setup(
     packages=find_packages(),
     python_requires=">=3.5",
     install_requires=["pytest", "Pillow"],
+    include_package_data=True,
     classifiers=[
         "Framework :: Pytest",
         "Topic :: Software Development :: Testing",

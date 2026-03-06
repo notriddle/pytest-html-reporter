@@ -1,5 +1,6 @@
 include LICENSE
 include README.rst
+include pytest_html_reporter/html/*
 
 global-include *.py
 prune tests/

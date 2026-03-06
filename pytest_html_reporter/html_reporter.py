@@ -344,8 +344,7 @@ class HTMLReporter(object):
                 ConfigVars._suite_error += 1
             elif 'FAIL' == \
                     self.json_data['content']['suites'].setdefault(len(ConfigVars._test_suite_name) - 1, {})['tests'][
-                        i][
-                        'status']:
+                        i].get('status', []):
                 ConfigVars._suite_fail += 1
 
         self.json_data['content']['suites'].setdefault(len(ConfigVars._test_suite_name) - 1, {}).setdefault('status',
