@@ -10,19 +10,17 @@ from pytest_html_reporter.const_vars import ConfigVars
 
 def suite_highlights(data):
     for i in data['content']['suites']:
+        name = data['content']['suites'][i].get('suite_name', '{unknown}')
         if data['content']['suites'][i]['status']['total_fail'] == 0:
-            l = data['content']['suites'][i]['suite_name']
-            if l not in ConfigVars.p_highlights:
-                ConfigVars.p_highlights[l] = 1
+            if name not in ConfigVars.p_highlights:
+                ConfigVars.p_highlights[name] = 1
             else:
-                ConfigVars.p_highlights[l] += 1
+                ConfigVars.p_highlights[name] += 1
         else:
-            k = data['content']['suites'][i]['suite_name']
-
-            if k not in ConfigVars.highlights:
-                ConfigVars.highlights[k] = 1
+            if name not in ConfigVars.highlights:
+                ConfigVars.highlights[name] = 1
             else:
-                ConfigVars.highlights[k] += 1
+                ConfigVars.highlights[name] += 1
 
 
 def generate_suite_highlights():
